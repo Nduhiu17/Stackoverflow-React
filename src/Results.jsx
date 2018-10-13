@@ -1,6 +1,24 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import axios from 'axios';
+import dateFormat from './dateFormat';
 
 export default class Results extends Component {
+    state = {
+        questions: []
+      }
+
+    componentDidMount() {
+        this.getQuestions()
+      }
+
+      getQuestions() {
+        axios.get(`https://antony-stackoverflow-v2.herokuapp.com/api/v1/questions`)
+        .then(res => {
+          const questions = res.data.data;
+          console.log(res.data.data);
+          this.setState({ questions });                 
+        })
+      }
   render() {
     return (
         <div>
@@ -8,80 +26,17 @@ export default class Results extends Component {
                 <div class="h2-questions">
                     <h2>Questions</h2>
                 </div>
-                <div class="question-title">
-                    <a href="question-details.html"><h3>Why does my JavaScript get a “No 'Access-Control-Allow-Origin' header is present on the requested resource” error when Postman does not?</h3></a>
+                { this.state.questions.map(question =>
+                <div>
+                    <h3 class="question-title">{question.title}</h3>
+                    <p className="question-content">{question.body}</p>
+                    <span class="question-tags">
+                        <p class="question-author">Author:{question.user.username}</p>
+                        <p class="question-creation-date">Created at:{dateFormat(question.date_created)}</p>
+                        <p class="question-author">{question.answers.length} Answers</p>
+                    </span>
                 </div>
-                <div class="question-content">
-                    I'm trying to build a simple API using Flask, in which I now want to read some POSTed JSON. I do the post with the PostMan Chrome extension, and the JSON I post is simpl I try to read the JSON using the following method 
-                </div>
-                <div class="question-tags">
-                    <div class="question-author">
-                        Author:Antony 
-                    </div>
-                    <div class="question-creation-date">
-                        Created at: 28/08/2018
-                    </div>
-                    <div class="question-answers">
-                        15 Answers
-                    </div>
-                </div>
-            </div>
-            <div class="questions-summary">
-                <div class="question-title">
-                    <a href="question-details.html"><h3>Why does my JavaScript get a “No 'Access-Control-Allow-Origin' header is present on the requested resource” error when Postman does not?</h3></a>
-                </div>
-                <div class="question-content">
-                    I'm trying to build a simple API using Flask, in which I now want to read some POSTed JSON. I do the post with the PostMan Chrome extension, and the JSON I post is simply I try to read the JSON using the following method 
-                </div>
-                <div class="question-tags">
-                    <div class="question-author">
-                        Author:Jane 
-                    </div>
-                    <div class="question-creation-date">
-                        Created at: 28/08/2018
-                    </div>
-                    <div class="question-answers">
-                        11 Answers
-                    </div>
-                </div>
-            </div>
-            <div class="questions-summary">
-                <div class="question-title">
-                    <a href="question-details.html"> <h3>Why does my JavaScript get a “No 'Access-Control-Allow-Origin' header is present on the requested resource” error when Postman does not?</h3></a>
-                </div>
-                <div class="question-content">
-                    I'm trying to build a simple API using Flask, in which I now want to read some POSTed JSON. I do the post with the PostMan Chrome extension, and the JSON I post is simplyI try to read the JSON using the following method
-                </div>
-                <div class="question-tags">
-                    <div class="question-author">
-                        Author:Antony 
-                    </div>
-                    <div class="question-creation-date">
-                        Created at: 28/08/2018
-                    </div>
-                    <div class="question-answers">
-                        15 Answers
-                    </div>
-                </div>
-            </div>
-            <div class="questions-summary">
-                <div class="question-title">
-                    <a href="question-details.html"> <h3>Why does my JavaScript get a “No 'Access-Control-Allow-Origin' header is present on the requested resource” error when Postman does not?</h3></a>
-                </div>
-                <div class="question-content">
-                    I'm trying to build a simple API using Flask, in which I now want to read some POSTed JSON. I do the post with the PostMan Chrome extension, and the JSON I post is sim I try to read the JSON using the following method
-                </div>
-                <div class="question-tags">
-                    <div class="question-author">
-                        Author:Antony 
-                    </div>
-                    <div class="question-creation-date">
-                        Created at: 28/08/2018
-                    </div>
-                    <div class="question-answers">
-                        15 Answers
-                    </div>
-                </div>
+                )}
             </div>
         </div>
     )
