@@ -161,6 +161,7 @@ h3{
 .question-tags{
   display: flex;
   flex-direction: row;
+  margin-top: -20px;
 }
 
 .question-author{
