@@ -23,7 +23,7 @@ export default class Header extends Component {
                         <a href="profile.html">Profile</a>
                     </div>
                     <div class="logout-header">
-                    <NavLink to='/login'>Logout</NavLink>
+                    <NavLink to='/'>Logout</NavLink>
                     </div>
                     <div class=" add-question-header">
                         <div><NavLink to='/askquestion'>Ask a Question</NavLink></div>
