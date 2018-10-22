@@ -35,7 +35,7 @@ export default class LoginForm extends Component {
           <div class="reg-main-body-container">
             <div class="reg-main-body2">
             <div className="sign-in">
-                Please Sign in
+                Please Sign In
             </div> 
             <form onSubmit={this.handleSubmit}>
                 <div class="form-group">

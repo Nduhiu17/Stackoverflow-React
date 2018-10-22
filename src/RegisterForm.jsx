@@ -35,7 +35,7 @@ export default class RegisterForm extends Component {
         <div>
         <div class="form-signin-r2">
         <div class="reg-title2">
-        Please sign up
+        Please Sign Up
         </div>
             <form onSubmit={this.handleSubmit}>
                 <div class="form-group">

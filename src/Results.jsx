@@ -27,7 +27,7 @@ export default class Results extends Component {
                 <div class="h2-questions">
                     <h2>Questions</h2>
                 </div>
-                { this.state.questions.map(question =>
+                { this.state.questions.reverse().map(question =>
                 <div>
                     <h3 class="question-title">{question.title}</h3>
                     <p className="question-content">{question.body}</p>
