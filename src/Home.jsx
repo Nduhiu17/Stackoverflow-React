@@ -3,6 +3,7 @@ import Results from './Results';
 import Header from './Header';
 import Left from './Left';
 import Right from './Right';
+import Footer from './Footer';
 
 import './App.css';
 
@@ -28,7 +29,9 @@ export default class Main extends Component {
             </div>
           </div>
         </div>
-      
+        <div class="footer-home">
+           <Footer/>
+        </div>
       </div>
     )
   }

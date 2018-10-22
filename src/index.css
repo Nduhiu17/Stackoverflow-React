@@ -20,6 +20,7 @@ html {
   position: fixed;
   top: 0;
   width: 100%;
+
 }
 
 .left-sideheader{
@@ -41,6 +42,8 @@ p.p-logo {
   font-size: 18px;
   color: #fff;
   min-width: 156px;
+  padding: 12px;
+  padding-top: 15px;
 }
 
 .login-header{
@@ -93,7 +96,7 @@ input[type=text], select, textarea {
   display: flex;
   background: #fff;
   flex-direction: row;
-  margin-top: 53px;
+  margin-top: 64px
 }
 
 .middle-body-container{
@@ -120,6 +123,7 @@ input[type=text], select, textarea {
   width: 100%;
   height: 4em;
   bottom: 0;
+  position: fixed;
 }
 .left-container {
   padding-left: 40px;
@@ -156,6 +160,7 @@ h3{
 .question-content{
   color: #3b4045;
   text-align: left;
+  padding-bottom: 8px;
 }
 
 .question-tags{
@@ -297,15 +302,16 @@ a {
 
 
 .reg-main-body2 {
-  width: 40%;
   min-height: 50vh;
-  margin-top: 7%;
+  margin-top: 45%;
   padding: 11px;
+  padding-left: 80px;
 
 }
 
-
-
+input.btn.btn-primary {
+  margin-top: 10px;
+}
 
 .reg-title {
   text-align: center;
@@ -392,6 +398,7 @@ input[type="password"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  margin-top: 6px;
 }
 
 .reg-submit-button{
@@ -400,6 +407,7 @@ input[type="password"] {
   border-radius: 8px;
   color: #fff;
   padding: 8px 20px;
+  margin: 10px;
 }
 
 .footer-reg{
@@ -844,4 +852,25 @@ a:hover {
 
 .right-question-container {
   width: 20%;
+}
+
+p {
+  /* margin-top: 0; */
+  margin-bottom: 1rem;
+}
+
+.sign-in {
+  color: #007bff;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.form-signin-r2 {
+  margin-top: 14vh;
+}
+
+.reg-title2 {
+  color: #007bff;
+  font-weight: 700;
+  font-size: 22px;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import dateFormat from './dateFormat';
+import API from './api';
 
 export default class Results extends Component {
     state = {
@@ -12,7 +13,7 @@ export default class Results extends Component {
       }
 
       getQuestions() {
-        axios.get(`https://antony-stackoverflow-v2.herokuapp.com/api/v1/questions`)
+        API.get(`api/v1/questions`)
         .then(res => {
           const questions = res.data.data;
           console.log(res.data.data);
