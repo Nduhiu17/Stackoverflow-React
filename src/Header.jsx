@@ -14,9 +14,10 @@ export default class Header extends Component {
                         <p class="p-logo"><NavLink to='/home'>Stack Overflow Lite</NavLink></p>
                     </div>
                     <div class="search-header">
-                        <form id="search-form" class="search-form"/>
-                            <input type="text" class="header-search" placeholder="search ...."/>
-                    </div>
+                         <form id="search-form" class="search-form">
+                    <input type="text" class="header-search" placeholder="search ...." ref={input => this.search = input} onChange={this.handleInputChange}/>
+            </form>
+        </div>
                 </div>
                 <div class="right-sideheader">
                     <div class="login-header">

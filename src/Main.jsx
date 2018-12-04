@@ -4,6 +4,8 @@ import Askquestion from './Askquestion';
 import Home from './Home';
 import Register from './Register';
 import Login from './Login';
+import Homes from './Homes';
+
 
 export default class Main extends Component {
   render() {
@@ -14,6 +16,7 @@ export default class Main extends Component {
             <Route exact path='/home' component={Home}></Route>
             <Route exact path='/' component={Login}></Route>
             <Route exact path='/register' component={Register}></Route>
+            <Route exact path='/searchresults' component={Homes}></Route>
         </Switch>
       </div>
     )
